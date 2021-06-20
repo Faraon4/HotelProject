@@ -1,0 +1,14 @@
+﻿@model MyHotel.Web.Models.RoomsListViewModel
+
+@{
+    ViewData["Title"] = "Crud Index";
+}
+
+<h2>Cars Index</h2>
+
+<p style="color: red">
+    @TempData["editResult"]
+</p>
+
+@await Html.PartialAsync("RoomsEdit", Model.EditedRoom)
+@await Html.PartialAsync("RoomsList", Model.ListOfRooms)

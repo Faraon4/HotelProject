@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyHotel.Data</name>
+    </assembly>
+    <members>
+        <member name="T:MyHotel.Models.Extra">
+            <summary>
+            Extra Entity.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Extra.Id">
+            <summary>
+            Gets or sets of Id.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Extra.ExtraType">
+            <summary>
+            Gets or sets of ExtraType.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Extra.ExtraPrice">
+            <summary>
+            Gets or sets of ExtraPrice.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Extra.ExtraDays">
+            <summary>
+            Gets or sets of ExtraDays.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Extra.ExtraNrpeople">
+            <summary>
+            Gets or sets of ExtraNrpeople.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Extra.ExtraTicket">
+            <summary>
+            Gets or sets of ExtraTicket..
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Extra.People">
+            <summary>
+            Gets  of People.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Models.Extra.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Models.Extra"/> class.
+            Text of the constructor.
+            </summary>
+        </member>
+        <member name="T:MyHotel.Models.HotelDbContext">
+            <summary>
+            Creating the HotelDbContext.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.HotelDbContext.People">
+            <summary>
+             Gets or sets of DbSet of People.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.HotelDbContext.Rooms">
+            <summary>
+            Gets or sets of DbSet of Rooms.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.HotelDbContext.Extras">
+            <summary>
+            Gets or sets of DbSet of Extras.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Models.HotelDbContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Models.HotelDbContext"/> class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Models.HotelDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Overriding the OnConfiguring method.
+            </summary>
+            <param name="optionsBuilder">adding the optionBuilder parameter.</param>
+        </member>
+        <member name="M:MyHotel.Models.HotelDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Overriding the OnModelCreating method.
+            </summary>
+            <param name="modelBuilder">creating the modelBuilder parameter. </param>
+        </member>
+        <member name="T:MyHotel.Models.People">
+            <summary>
+            People Entity.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.People.Id">
+            <summary>
+            Gets or sets of Id property.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.People.PeopleName">
+            <summary>
+            Gets or sets of Peoplename property.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.People.PeopleRoomid">
+            <summary>
+            Gets or sets of PeopleRoomid property.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.People.PeopleExtraid">
+            <summary>
+            Gets or sets of PeopleExtraId property.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.People.Country">
+            <summary>
+            Gets or sets of Country property.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.People.PeopleCheckin">
+            <summary>
+            Gets or sets of PeopleCheckin property.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.People.PeopleCheckout">
+            <summary>
+            Gets or sets of PeopleCheckout property.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.People.PeopleExtra">
+            <summary>
+            Gets or sets Connection to Extra Table.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.People.PeopleRoom">
+            <summary>
+            Gets or sets Connection to Room Table.
+            </summary>
+        </member>
+        <member name="T:MyHotel.Models.Rooms">
+            <summary>
+            Rooms Entity.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Rooms.Id">
+            <summary>
+            Gets or sets of Id.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Rooms.RoomsType">
+            <summary>
+            Gets or sets of RoomsType.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Rooms.RoomsAmount">
+            <summary>
+            Gets or sets of RoomsAmount.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Rooms.RoomsAvailable">
+            <summary>
+            Gets or sets of RoomsAvailable.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Rooms.RoomsPrice">
+            <summary>
+            Gets or sets of RoomsPrice.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Rooms.RoomsView">
+            <summary>
+            Gets or sets of RoomsView.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Models.Rooms.People">
+            <summary>
+            Gets  Connection to The People Table.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Models.Rooms.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Models.Rooms"/> class.
+            Text of constructor.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,810 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyHotel.Logic</name>
+    </assembly>
+    <members>
+        <member name="T:MyHotel.Logic.ExtraNrID">
+            <summary>
+            Class that will show id of extra and number of it.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.ExtraNrID.ID">
+            <summary>
+            Gets or sets the ID of the room.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.ExtraNrID.Nr">
+            <summary>
+            Gets or sets the Nr of the room.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.ExtraNrID.ToString">
+            <summary>
+            Overriding the ToString method.
+            </summary>
+            <returns>a string as following format.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.ExtraNrID.Equals(System.Object)">
+            <summary>
+            Overriding the Equals method, that checks if 2 objects are the same or no.
+            </summary>
+            <param name="obj">obj as parameter, that will help to see if 2 objects are equal. </param>
+            <returns>should be true/false , depending if 2 objects are equal or no.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.ExtraNrID.GetHashCode">
+            <summary>
+            Overriding the GetHashCode.
+            </summary>
+            <returns>zero, so it force the Equal() method.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.ExtraNumber">
+            <summary>
+            Class that find number of each extra activity.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.ExtraNumber.Nr">
+            <summary>
+            Gets or sets number of the extra activity.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.ExtraNumber.Extra">
+            <summary>
+            Gets or sets extra type.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.ExtraNumber.ToString">
+            <summary>
+            Overriding the ToString() Method.
+            </summary>
+            <returns>a string as following format.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.ExtraNumber.Equals(System.Object)">
+            <summary>
+            Overriding the Equals method, that checks if 2 objects are the same or no.
+            </summary>
+            <param name="obj">obj as parameter, that will help to see if 2 objects are equal. </param>
+            <returns>should be true/false , depending if 2 objects are equal or no.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.ExtraNumber.GetHashCode">
+            <summary>
+            Getting the Hash Code, but return 0 and this will force the Equal method.
+            </summary>
+            <returns>integer.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.IManagement">
+            <summary>
+            Logic for Management, Here are the CRUD operation except read , because that one are in the reception part.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.AddNewRoom(MyHotel.Models.Rooms)">
+            <summary>
+            Method to add new room.
+            </summary>
+            <param name="newRoom">parameter to ad.</param>
+            <returns>id of the new room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.AddNewPeople(MyHotel.Models.People)">
+            <summary>
+            Method to add new people.
+            </summary>
+            <param name="newPeople">new people to add.</param>
+            <returns> id of the new people.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.AddNewExtra(MyHotel.Models.Extra)">
+            <summary>
+            Method to add new extra activity.
+            </summary>
+            <param name="newExtra">new extra to add.</param>
+            <returns>id of the new extra activity.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.ChangeRoomPrice(System.Int32,System.Int32)">
+            <summary>
+            Method to Change the Price of the Room.
+            </summary>
+            <param name="roomId">id of the room that you want to change.</param>
+            <param name="price">new price that you want to change.</param>
+            <returns>id of the room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.ChangeRoomPeople(System.Int32,System.Int32)">
+            <summary>
+            Method to change the room of the people.
+            </summary>
+            <param name="peopleID">id of the people.</param>
+            <param name="newRoomId">id of the new room.</param>
+            <returns>id of the people that changed the room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.ChangeRoomAvailable(System.Int32)">
+            <summary>
+            Method to change the available rooms of type.
+            </summary>
+            <param name="roomId">id of the room .</param>
+            <returns>id of the room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.ChangeExtraPeople(System.Int32,System.Int32)">
+            <summary>
+            Method that change the extra for the people.
+            </summary>
+            <param name="peopleID">id of the people.</param>
+            <param name="newExtraId">id of the new extra.</param>
+            <returns>id of the people that changed the extra activity.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.ChangeExtraPrice(System.Int32,System.Int32)">
+            <summary>
+            Method to Change the Price of the Extra Activity.
+            </summary>
+            <param name="extraId">id of the extra activity that you want to change.</param>
+            <param name="price">new price.</param>
+            <returns>id of the extra activity that you changed the price.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.ChangeSelection(System.Int32,System.String)">
+            <summary>
+             Method to change the selection of the room.
+            </summary>
+            <param name="id">id of the room.</param>
+            <param name="text">text to be changed.</param>
+            <returns>true or false.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.DeleteRoom(System.Int32)">
+            <summary>
+            Method that delete the room.
+            </summary>
+            <param name="roomdId">id of the room that you want to delete.</param>
+            <returns>id of deleted room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.DeletePeople(System.Int32)">
+            <summary>
+            Method that delete people.
+            </summary>
+            <param name="peopleId">id of the people that you want to delete.</param>
+            <returns>id of deleted people.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.DeleteExtra(System.Int32)">
+            <summary>
+            Method that delete extra activity.
+            </summary>
+            <param name="extraId">id of the extra activity that you want to delete.</param>
+            <returns>id of the deleted extra activity.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.GetOneRoom(System.Int32)">
+            <summary>
+            Method the get one room by one id.
+            </summary>
+            <param name="id">id of the room that you want.</param>
+            <returns>the room by id.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IManagement.GetAllRooms">
+            <summary>
+            Mthod to read all rooms.
+            </summary>
+            <returns>list of rooms.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.IReception">
+            <summary>
+            IReception interface, Here arer the non-crud operation and the Read part from the cRud
+            I did like this becuase , most of all, at reception you can see information, but not adding, deleating or updating it.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.ExtraNumber">
+            <summary>
+            Method to count how many , of each activity , people choose.
+            </summary>
+            <returns>as a list of extra activity and number of each.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.TotalPrice">
+            <summary>
+            Method to count how many $ people pay for their holiday.
+            </summary>
+            <returns>as a list of total price.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.RoomNr">
+            <summary>
+            Method to count how many, of each room, people choose.
+            </summary>
+            <returns>list of rooms with the number of each one.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.RoomNrID">
+            <summary>
+            Method to count how many, of each room, people choose by id.
+            </summary>
+            <returns>list of id of the rooms.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.ExtraNrId">
+            <summary>
+            Method that will count the extras by id.
+            </summary>
+            <returns>list of ids of extra and its number.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.TaskTotalPrice">
+            <summary>
+            Method that will call non-crud method that count total sum, with the help of the TASK.
+            </summary>
+            <returns>task of totalprice.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.TaskNumberOfRooms">
+            <summary>
+            Method that will call non-crud method that count number of rooms, with the help of the TASK.
+            </summary>
+            <returns>task of total room number.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.TaskNumberOfExtra">
+            <summary>
+            Method that will call non-crud method that count number of extra, with the help of TASK.
+            </summary>
+            <returns>task of extra number.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.GetRoomsPrice">
+            <summary>
+            Read the rooms and their price.
+            </summary>
+            <returns> a List of rooms with their price.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.GetOneRoom(System.Int32)">
+            <summary>
+            Method the get one room by one id.
+            </summary>
+            <param name="id">id of the room that you want.</param>
+            <returns>the room by id.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.GetAllRooms">
+            <summary>
+            Mthod to read all rooms.
+            </summary>
+            <returns>list of rooms.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.GetAllPeople">
+            <summary>
+            Mrthod to read all people.
+            </summary>
+            <returns>list of people.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.GetOnePeople(System.Int32)">
+            <summary>
+            Method to get one person.
+            </summary>
+            <param name="id">id of the people to read.</param>
+            <returns>return that people.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.GetCountryPeople">
+            <summary>
+            Get the People  where are they from, what is their room id and extra activity id.
+            </summary>
+            <returns>list of information about people.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.GetOneExtra(System.Int32)">
+            <summary>
+            Method to get one Extra activity.
+            </summary>
+            <param name="id">id of the extra activity that you want to get.</param>
+            <returns>extra activity by id.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.GetAllExtras">
+            <summary>
+            Method to get all extras.
+            </summary>
+            <returns>list of extras.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.IReception.GetExtraPrice">
+            <summary>
+            Get extra activity and the price.
+            </summary>
+            <returns>list of the extra activity and their price.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.Managers">
+            <summary>
+            Management class -> this is the Logic of the program.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.#ctor(MyHotel.Repository.IExtraRepository,MyHotel.Repository.IPeopleRepository,MyHotel.Repository.IRoomRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Logic.Managers"/> class.
+            Constructor that take as parameter all 3 repository.
+            </summary>
+            <param name="extraRepo">parameter to connect to the extra repository.</param>
+            <param name="peopleRepo">parameter to connect to people repository.</param>
+            <param name="roomRepo">parameter to connect to room repository.</param>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.#ctor(MyHotel.Repository.IRoomRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Logic.Managers"/> class.
+            Constructor that take as parameter room repository.
+            </summary>
+            <param name="roomRepo">parameter to connect to room repository.</param>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.#ctor(MyHotel.Repository.IExtraRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Logic.Managers"/> class.
+            Constructor that take as parameter extra repository.
+            </summary>
+            <param name="extraRepo">parameter to connect to extra repository.</param>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.#ctor(MyHotel.Repository.IPeopleRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Logic.Managers"/> class.
+            Constructor that take as parameter people repository.
+            </summary>
+            <param name="peopleRepo">parameter to connect to extra repository.</param>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.AddNewExtra(MyHotel.Models.Extra)">
+            <summary>
+            Implementing the method for adding new extra activity from IManagement interface.
+            </summary>
+            <param name="newExtra">new extra activity for being added.</param>
+            <returns>id of the new added extra activity.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.AddNewPeople(MyHotel.Models.People)">
+            <summary>
+            Implementing the method for adding new people from IManagement interface.
+            </summary>
+            <param name="newPeople">new people for being added.</param>
+            <returns>id of the new added people.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.AddNewRoom(MyHotel.Models.Rooms)">
+            <summary>
+            Implementing the method for adding new room from IManagement interface.
+            </summary>
+            <param name="newRoom">new room for being added.</param>
+            <returns>id of the new added room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.ChangeExtraPrice(System.Int32,System.Int32)">
+            <summary>
+            Method to change the price of extra activit.
+            </summary>
+            <param name="extraId">id of the extra activity.</param>
+            <param name="price">new price.</param>
+            <returns>id of the extra activity that changed the price.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.ChangeRoomPeople(System.Int32,System.Int32)">
+            <summary>
+            Method that will change the room of the people.
+            </summary>
+            <param name="peopleID">id of the people.</param>
+            <param name="newRoomId">id of the new room.</param>
+            <returns>id of the people that just changed the room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.ChangeExtraPeople(System.Int32,System.Int32)">
+            <summary>
+            Method that will change the room of the people.
+            </summary>
+            <param name="peopleID">id of the people.</param>
+            <param name="newExtraId">id of the new room.</param>
+            <returns>id of the people that just changed the room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.ChangeRoomPrice(System.Int32,System.Int32)">
+            <summary>
+            Method to change the price of the room.
+            </summary>
+            <param name="roomId">id of the room .</param>
+            <param name="price">new price for the room.</param>
+            <returns>id of the room that changed the price.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.ChangeRoomAvailable(System.Int32)">
+            <summary>
+            Implementing the method from the IManagement.
+            </summary>
+            <param name="roomId">id of the room.</param>
+            <returns>id of the room changed.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.ChangeSelection(System.Int32,System.String)">
+            <summary>
+            Implementing the change selction of the room.
+            </summary>
+            <param name="id">id of the room.</param>
+            <param name="text">textto be changed.</param>
+            <returns>true or false.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.DeleteExtra(System.Int32)">
+            <summary>
+            Method that delete an extra activity.
+            </summary>
+            <param name="extraId">id of the activity that want to delete.</param>
+            <returns>id of the deleted extra.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.DeletePeople(System.Int32)">
+            <summary>
+            Method that delete people.
+            </summary>
+            <param name="peopleId">id of the people that want to delete.</param>
+            <returns>id of the deleted people.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.DeleteRoom(System.Int32)">
+            <summary>
+            Method that delete the room.
+            </summary>
+            <param name="roomdId">id of the room that want to delete.</param>
+            <returns>id of the deleted room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.GetOneRoom(System.Int32)">
+            <summary>
+            Method to get one room.
+            </summary>
+            <param name="id">id of the room that you want to get.</param>
+            <returns>the room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Managers.GetAllRooms">
+            <summary>
+            Method to get all rooms.
+            </summary>
+            <returns>list of rooms.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.PeopleCountry">
+            <summary>
+            Class that will help to return information about people.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PeopleCountry.ID">
+            <summary>
+            Gets or sets of the  People Id.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PeopleCountry.PeopleName">
+            <summary>
+            Gets or sets of the Name of people.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PeopleCountry.Country">
+            <summary>
+            Gets or sets of the Country of people.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PeopleCountry.IdOfRoom">
+            <summary>
+            Gets or sets of id of the room of people.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PeopleCountry.IdOfExtra">
+            <summary>
+            Gets or sets of id of the extra of people.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.PeopleCountry.ToString">
+            <summary>
+            overriding the ToString method.
+            </summary>
+            <returns>string as following format.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.PeopleCountry.Equals(System.Object)">
+            <summary>
+            Overriding the Equals method, that checks if 2 objects are the same or no.
+            </summary>
+            <param name="obj">obj as parameter, that will help to see if 2 objects are equal. </param>
+            <returns>should be true/false , depending if 2 objects are equal or no.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.PeopleCountry.GetHashCode">
+            <summary>
+            override GetHashCode.
+            </summary>
+            <returns>zero, and force Equals method.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.PriceResult">
+            <summary>
+            Class to show the id and the type of room and room's price.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PriceResult.ID">
+            <summary>
+            Gets or sets of the Room's ID.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PriceResult.RoomType">
+            <summary>
+            Gets or sets of the Room Type.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PriceResult.Price">
+            <summary>
+            Gets or sets of the Price.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.PriceResult.ToString">
+            <summary>
+            Overriding the ToString() method.
+            </summary>
+            <returns>returns a string as following format.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.PriceResult.Equals(System.Object)">
+            <summary>
+            Overriding the Equals method, that checks if 2 objects are the same or no.
+            </summary>
+            <param name="obj">obj as parameter, that will help to see if 2 objects are equal. </param>
+            <returns>should be true/false , depending if 2 objects are equal or no.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.PriceResult.GetHashCode">
+            <summary>
+            Overriding the GetHashCode().
+            </summary>
+            <returns> an integer.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.PriceResultExtra">
+            <summary>
+            Class for returning the Type of extra and Price of it.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PriceResultExtra.ID">
+            <summary>
+            Gets or sets of the Extra ID.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PriceResultExtra.ExtraType">
+            <summary>
+            Gets or sets property for returning the Name of the Extra Activity.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.PriceResultExtra.PriceRes">
+            <summary>
+            Gets or sets property for returning the Price of the Extra Activity.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.PriceResultExtra.ToString">
+            <summary>
+            Overriding the ToString() Method.
+            </summary>
+            <returns>return a string, as the following format.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.PriceResultExtra.Equals(System.Object)">
+            <summary>
+            Overriding the Equal method for checking two values that are equal.
+            </summary>
+            <param name="obj">obj parameter, that will help to find if 2 objects are equal or no.</param>
+            <returns>return a bool value , depending if this 2 values are equal with each other or no.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.PriceResultExtra.GetHashCode">
+            <summary>
+            Getting the Hash Code, but return 0 and this will force the Equal method.
+            </summary>
+            <returns> 0.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.Reception">
+            <summary>
+            Reception class -> implements the IReception interface.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.#ctor(MyHotel.Repository.IExtraRepository,MyHotel.Repository.IPeopleRepository,MyHotel.Repository.IRoomRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Logic.Reception"/> class.
+            Constructor that take as parameter all 3 repository.
+            </summary>
+            <param name="extraRepository">parameter to connect to the extra repository.</param>
+            <param name="peopleRepository">parameter to connect to people repository.</param>
+            <param name="roomRepository">parameter to connect to room repository.</param>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.#ctor(MyHotel.Repository.IExtraRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Logic.Reception"/> class.
+            Constructor that take as parameter only 1 repository extraRepository.
+            </summary>
+            <param name="extraRepository">extraRepository parameter that will help to make connection to extra Repository.</param>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.#ctor(MyHotel.Repository.IPeopleRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Logic.Reception"/> class.
+            Constructor that take as parameter only 1 repository peopleRepository.
+            </summary>
+            <param name="peopleRepository">peopleRepository parameter that will help to make connection to extra Repository.</param>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.#ctor(MyHotel.Repository.IRoomRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Logic.Reception"/> class.
+            Constructor that take as parameter only 1 repository roomRepository.
+            </summary>
+            <param name="roomRepository">roomRepository paramter that will help to make connection to extra Repository.</param>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.ExtraNumber">
+            <summary>
+            Implementing method from IReception interface, to find how many extra activity of each type , people choose.
+            </summary>
+            <returns>as a list of extra activity and the number of how many people choose this activity.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.RoomNr">
+            <summary>
+            Implementing the method from IReception interface, to find how many rooms of each type, people choose.
+            </summary>
+            <returns>as a list of rooms and the number of how many room people choose.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.RoomNrID">
+            <summary>
+            Implementing the method from IReception interface, to find how many rooms of each type by id, people choose.
+            </summary>
+            <returns>as a list of id of rooms and the number of how many room people choose.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.ExtraNrId">
+            <summary>
+            Implementing the method from IReception interface, to find how many extras of each type by id, people choose.
+            </summary>
+            <returns>as a list of id of extra activity and the number of how many people choose this activity.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.TotalPrice">
+            <summary>
+            Implementing the method from the IReception interface, to count how many $ people pay for their holiday.
+            </summary>
+            <returns>as a list of how many $ did every people pay.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.GetAllExtras">
+            <summary>
+            Implementing the mehtond from IReception for reading all extras.
+            </summary>
+            <returns>list of extras.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.GetAllPeople">
+            <summary>
+            Implementing the mehtond from IReception for reading all people.
+            </summary>
+            <returns>list of people.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.GetAllRooms">
+            <summary>
+            Implementing the mehtond from IReception for reading all rooms.
+            </summary>
+            <returns>list of rooms.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.GetCountryPeople">
+            <summary>
+            Implementing method from IManagement that Read informationa bout people.
+            </summary>
+            <returns>list of people and where are they from, what room did they choose and what extra activity did they choose.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.GetExtraPrice">
+            <summary>
+            Implementing method from IReception that Read extra activity and their price.
+            </summary>
+            <returns>list of extra activity and their price.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.GetRoomsPrice">
+            <summary>
+            Implementing method from IReception that Read room and their price.
+            </summary>
+            <returns>list of room and their price.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.GetOneExtra(System.Int32)">
+            <summary>
+            Implementing the mehtond from IReception for reading one extra activity by id.
+            </summary>
+            <param name="id">id of the extra activity.</param>
+            <returns>information about extra activity.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.GetOnePeople(System.Int32)">
+            <summary>
+            Implementing the mehtond from IReception for reading one people by id.
+            </summary>
+            <param name="id">id of the people.</param>
+            <returns>information about people.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.GetOneRoom(System.Int32)">
+            <summary>
+            Implementing the mehtond from IReception for reading one room by id.
+            </summary>
+            <param name="id">id of the room.</param>
+            <returns>information about room.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.TaskTotalPrice">
+            <summary>
+            Calling the non-crud operation that count how many people pay for their holiday , with the help of the Task.
+            </summary>
+            <returns>List of total price.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.TaskNumberOfRooms">
+            <summary>
+            Calling the non-crud operation thatacount how many rooms of each type are used.
+            </summary>
+            <returns>List of rooms and the price.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.Reception.TaskNumberOfExtra">
+            <summary>
+            Calling the non-crud operation that count how many extra activity, of each type,people choose.
+            </summary>
+            <returns>List of extra activity and their price.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.RoomNr">
+            <summary>
+            Class that will help us to find the number of rooms of each  type.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.RoomNr.RoomType">
+            <summary>
+            Gets or sets Room type.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.RoomNr.Nr">
+            <summary>
+            Gets or sets Number of rooms.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.RoomNr.ToString">
+            <summary>
+            Overriding the ToString() method.
+            </summary>
+            <returns> string as the following format.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.RoomNr.Equals(System.Object)">
+            <summary>
+            Overriding the Equal() method , that checks 2 objects if they are the same.
+            </summary>
+            <param name="obj">obj parameter, that will help to check 2 objects.</param>
+            <returns>true or false , depending if the objects are equals.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.RoomNr.GetHashCode">
+            <summary>
+            Overriding the GetHashCode().
+            </summary>
+            <returns> an integer.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.RoomNrByID">
+            <summary>
+             This class is the same as RoomNr, but instead showing the room type and nr of rooms, it will show the id of rooms and its numbers.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.RoomNrByID.ID">
+            <summary>
+            Gets or sets the ID of the room.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.RoomNrByID.Nr">
+            <summary>
+            Gets or sets the Nr of the room.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.RoomNrByID.ToString">
+            <summary>
+            Overriding the ToString method.
+            </summary>
+            <returns>a string.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.RoomNrByID.Equals(System.Object)">
+            <summary>
+            Overriding the Equal method, that checks 2 objects of the same type.
+            </summary>
+            <param name="obj">obj parameter that will be used to compare 2 objects.</param>
+            <returns>true or false, depends if this 2 objects are equal or no.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.RoomNrByID.GetHashCode">
+            <summary>
+            Overriding the GetHashCode.
+            </summary>
+            <returns> an integer.</returns>
+        </member>
+        <member name="T:MyHotel.Logic.TotalPrice">
+            <summary>
+            Class that will be used to find how many $ people pay, with non-crud operation.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.TotalPrice.Name">
+            <summary>
+            Gets or sets the Name of person.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.TotalPrice.Room">
+            <summary>
+            Gets or sets the Room of person.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.TotalPrice.Extra">
+            <summary>
+            Gets or sets the extra activity of person.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Logic.TotalPrice.Price">
+            <summary>
+            Gets or sets the price of person that they pay.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Logic.TotalPrice.ToString">
+            <summary>
+            Overriding the ToString() method.
+            </summary>
+            <returns>string of following format.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.TotalPrice.Equals(System.Object)">
+            <summary>
+            Overriding the Equla method, that checks the properties.
+            </summary>
+            <param name="obj">obj parameter that will be used to compare 2 objects.</param>
+            <returns>true or false, depending if properties of 2 different objects are the same.</returns>
+        </member>
+        <member name="M:MyHotel.Logic.TotalPrice.GetHashCode">
+            <summary>
+            Overriding the GetHashCode(), returnong 0 and force to execute Equals() method.
+            </summary>
+            <returns>an integer.</returns>
+        </member>
+    </members>
+</doc>

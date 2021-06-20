@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyHotel.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:MyHotel.Wpf.App">
+            <summary>
+            Interaction logic for App.xaml.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.App.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Wpf.App"/> class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:MyHotel.Wpf.BL.IEditorService">
+            <summary>
+            Editor service interface.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.IEditorService.EditRoom(MyHotel.Wpf.BL.RoomVM)">
+            <summary>
+            Method that check if it is possible to edit the room.
+            </summary>
+            <param name="roomVM">room parameter.</param>
+            <returns>true or false.</returns>
+        </member>
+        <member name="T:MyHotel.Wpf.BL.IRoomLogic">
+            <summary>
+            Interface of the CRUD operations.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.IRoomLogic.AddRoom(System.Collections.Generic.IList{MyHotel.Wpf.BL.RoomVM})">
+            <summary>
+            Method that will add a new room.
+            </summary>
+            <param name="list">list of the rooms.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.IRoomLogic.DelRoom(System.Collections.Generic.IList{MyHotel.Wpf.BL.RoomVM},MyHotel.Wpf.BL.RoomVM)">
+            <summary>
+            Method that will delete a selected room from the list.
+            </summary>
+            <param name="list">list of the rooms from the db.</param>
+            <param name="room">room that must be deleted.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.IRoomLogic.DellAll(System.Collections.Generic.IList{MyHotel.Wpf.BL.RoomVM})">
+            <summary>
+            Method that will delete all rooms.
+            </summary>
+            <param name="list">list of rooms that have to be deleted.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.IRoomLogic.GetAllRooms(System.Collections.Generic.IList{MyHotel.Wpf.BL.RoomVM})">
+            <summary>
+            Method that will get all the rooms.
+            </summary>
+            <param name="list">list of the roomsfrom the database.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.IRoomLogic.ModRoom(MyHotel.Wpf.BL.RoomVM)">
+            <summary>
+            Method that will modify a room.
+            </summary>
+            <param name="roomToModify">room that have to be modified.</param>
+        </member>
+        <member name="T:MyHotel.Wpf.BL.RoomLogic">
+            <summary>
+            Class that will imlpement the CRUD methods.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.RoomLogic.#ctor(MyHotel.Wpf.BL.IEditorService,GalaSoft.MvvmLight.Messaging.IMessenger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Wpf.BL.RoomLogic"/> class.
+            Constructor to declare the parameters.
+            </summary>
+            <param name="editorService">editor service parameter.</param>
+            <param name="messengerService">messenger service parameter.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.RoomLogic.FromDbToVM(System.Collections.Generic.IList{MyHotel.Models.Rooms})">
+            <summary>
+            Method to make the convertion of the room from the db to the vm.
+            </summary>
+            <param name="dbList">list of parameters from the database.</param>
+            <returns>list of the vm rooms.</returns>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.RoomLogic.FromVMtoDb(MyHotel.Wpf.BL.RoomVM)">
+            <summary>
+            Method to convert room vm from vm to db.
+            </summary>
+            <param name="roomVM">room vm parameter.</param>
+            <returns>type room.</returns>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.RoomLogic.AddRoom(System.Collections.Generic.IList{MyHotel.Wpf.BL.RoomVM})">
+            <summary>
+            Implementing the Add method from the IRoomLogic.
+            </summary>
+            <param name="list">list of the rooms.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.RoomLogic.DellAll(System.Collections.Generic.IList{MyHotel.Wpf.BL.RoomVM})">
+            <summary>
+            Implementing the delete all method from the IRoomLogic.
+            </summary>
+            <param name="list">list of the room that have to be deleted.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.RoomLogic.DelRoom(System.Collections.Generic.IList{MyHotel.Wpf.BL.RoomVM},MyHotel.Wpf.BL.RoomVM)">
+            <summary>
+            Implementing the delete room method from the IRoomLogic.
+            </summary>
+            <param name="list">list of the rooms.</param>
+            <param name="room">room that have to be deleted.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.RoomLogic.GetAllRooms(System.Collections.Generic.IList{MyHotel.Wpf.BL.RoomVM})">
+            <summary>
+            Implementing the get all rooms method from the IRoomLogic.
+            </summary>
+            <param name="list">list of rooms.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.RoomLogic.ModRoom(MyHotel.Wpf.BL.RoomVM)">
+            <summary>
+            Implementing the modify method from the IRoomLogic.
+            </summary>
+            <param name="roomToModify">room that need to be modified.</param>
+        </member>
+        <member name="T:MyHotel.Wpf.BL.RoomVM">
+            <summary>
+            VM of the room.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.BL.RoomVM.Id">
+            <summary>
+            Gets or sets id of the roomVM.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.BL.RoomVM.Type">
+            <summary>
+            Gets or sets type of the roomVM.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.BL.RoomVM.Amount">
+            <summary>
+            Gets or sets amount of the roomVM.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.BL.RoomVM.Available">
+            <summary>
+            Gets or sets available of the roomVM.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.BL.RoomVM.Price">
+            <summary>
+            Gets or sets price of the roomVM.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.BL.RoomVM.View">
+            <summary>
+            Gets or sets view of the roomVM.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.BL.RoomVM.CopyFrom(MyHotel.Wpf.BL.RoomVM)">
+            <summary>
+            Method that will copy properties of one roomVM to other room VM.
+            </summary>
+            <param name="other">other room parameter.</param>
+        </member>
+        <member name="T:MyHotel.Wpf.EditorWindow">
+            <summary>
+            Interaction logic for EditorWindow.xaml.
+            </summary>
+            <summary>
+            EditorWindow
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.EditorWindow.Room">
+            <summary>
+            Gets of the room vm.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.EditorWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Wpf.EditorWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.EditorWindow.#ctor(MyHotel.Wpf.BL.RoomVM)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Wpf.EditorWindow"/> class.
+            </summary>
+            <param name="newRoom">new room parameter.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.EditorWindow.OK_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Ok click event.
+            </summary>
+            <param name="sender">sender object.</param>
+            <param name="e">e event.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.EditorWindow.Cancel_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Cancel click event.
+            </summary>
+            <param name="sender">sender object.</param>
+            <param name="e">e event.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.EditorWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MyHotel.Wpf.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.MainWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Wpf.MainWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.MainWindow.Window_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Window_Loaded implementing event.
+            </summary>
+            <param name="sender">sender object.</param>
+            <param name="e">e event.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.MainWindow.Window_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Window_Closing implementing event.
+            </summary>
+            <param name="sender">sender object.</param>
+            <param name="e">e event.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MyHotel.Wpf.MyIOC">
+            <summary>
+            Creating my IOC.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.MyIOC.Instance">
+            <summary>
+            Gets MyIOC instance.
+            </summary>
+        </member>
+        <member name="T:MyHotel.Wpf.UI.EditorServiceViaWindow">
+            <summary>
+            Editor service window, that will implement the IEditorService interface.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.UI.EditorServiceViaWindow.EditRoom(MyHotel.Wpf.BL.RoomVM)">
+            <summary>
+            Implementing the EditRoom method from the IEditorService interface.
+            </summary>
+            <param name="roomVM">room parameter.</param>
+            <returns>true or false.</returns>
+        </member>
+        <member name="T:MyHotel.Wpf.VM.EditorViewModel">
+            <summary>
+            Class that will be used for the Editing Window.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.VM.EditorViewModel.Room">
+            <summary>
+            Gets or sets of the room.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.VM.EditorViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Wpf.VM.EditorViewModel"/> class.
+            </summary>
+        </member>
+        <member name="T:MyHotel.Wpf.VM.MainViewModel">
+            <summary>
+            Class that will be used in the Main window.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.VM.MainViewModel.RoomSelected">
+            <summary>
+            Gets or sets of the roomSelected.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.VM.MainViewModel.Room">
+            <summary>
+            Gets observable collection of the room.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.VM.MainViewModel.AddCmd">
+            <summary>
+            Gets the command of adding new roomo.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.VM.MainViewModel.DelCmd">
+            <summary>
+            Gets the command of delete a room.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.VM.MainViewModel.DelAll">
+            <summary>
+            Gets the command of deleting all room.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.VM.MainViewModel.GetAll">
+            <summary>
+            Gets the coomand of getting all rooms.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Wpf.VM.MainViewModel.ModCmd">
+            <summary>
+            Gets the command of modifing the room.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Wpf.VM.MainViewModel.#ctor(MyHotel.Wpf.BL.IRoomLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Wpf.VM.MainViewModel"/> class.
+            </summary>
+            <param name="logic">roomlogic parameter to access the CRUD method.</param>
+        </member>
+        <member name="M:MyHotel.Wpf.VM.MainViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Wpf.VM.MainViewModel"/> class.
+            </summary>
+        </member>
+    </members>
+</doc>

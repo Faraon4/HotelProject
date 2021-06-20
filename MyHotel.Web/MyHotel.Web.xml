@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyHotel.Web</name>
+    </assembly>
+    <members>
+        <member name="T:MyHotel.Web.Controllers.ApiResult">
+            <summary>
+            Helper class for the RoomsApiController.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Controllers.ApiResult.OperationResult">
+            <summary>
+            Gets or sets a value indicating whether gets or sets a value indicating the operationResult.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Controllers.ApiResult.Number">
+            <summary>
+            Gets or sets of values indicating , number of selected or unselected rooms.
+            </summary>
+        </member>
+        <member name="T:MyHotel.Web.Controllers.HomeController">
+            <summary>
+            Home Controller.
+            </summary>
+        </member>
+        <member name="F:MyHotel.Web.Controllers.HomeController._logger">
+            <summary>
+            Home controller.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.HomeController.#ctor(Microsoft.Extensions.Logging.ILogger{MyHotel.Web.Controllers.HomeController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Web.Controllers.HomeController"/> class.
+            constructor of the class.
+            </summary>
+            <param name="logger">logger parameter.</param>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.HomeController.Index">
+            <summary>
+            Index method.
+            </summary>
+            <returns>IactionResult.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.HomeController.Privacy">
+            <summary>
+            Privacy method.
+            </summary>
+            <returns>IActionResult.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.HomeController.Error">
+            <summary>
+            Error method.
+            </summary>
+            <returns>IActionResult.</returns>
+        </member>
+        <member name="T:MyHotel.Web.Controllers.RandomController">
+            <summary>
+            Random controller for the homework.
+            </summary>
+        </member>
+        <member name="F:MyHotel.Web.Controllers.RandomController.rnd">
+            <summary>
+            Get random number.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RandomController.#ctor(MyHotel.Logic.IManagement,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Web.Controllers.RandomController"/> class.
+            </summary>
+            <param name="logic">logic.</param>
+            <param name="mapper">mapper.</param>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RandomController.GetOne">
+            <summary>
+            Method to generate room.
+            </summary>
+            <returns>Models Room.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RandomController.Select(System.Int32)">
+            <summary>
+            Method to add selected to the room.
+            </summary>
+            <param name="id">id of the room.</param>
+            <returns>json.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RandomController.UnSelect(System.Int32)">
+            <summary>
+            Method to add unselected to the room.
+            </summary>
+            <param name="id">id of the room.</param>
+            <returns>json.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RandomController.Selections">
+            <summary>
+            Main View.
+            </summary>
+            <returns>IAction.</returns>
+        </member>
+        <member name="T:MyHotel.Web.Controllers.RoomsApiController">
+            <summary>
+            New controller for the RoomsApi.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsApiController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Web.Controllers.RoomsApiController"/> class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsApiController.GetAll">
+            <summary>
+            Method to get all information from the database.
+            </summary>
+            <returns>Uenumerable of rooms.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsApiController.DelOneRoom(System.Int32)">
+            <summary>
+            Method to delete the room.
+            </summary>
+            <param name="id">id of the room that you want to delete.</param>
+            <returns>ApiResult - true/false, depending of the situation.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsApiController.AddOneRoom(MyHotel.Web.Models.Rooms)">
+            <summary>
+            Method to add new room to the database.
+            </summary>
+            <param name="room">room to be added.</param>
+            <returns>ApiResult - true/false, depending of the situation.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsApiController.ModOneRoom(MyHotel.Web.Models.Rooms)">
+            <summary>
+            Method to modify the room.
+            </summary>
+            <param name="room">room that you want to modify.</param>
+            <returns>ApiResult - true/false, depending of the situation.</returns>
+        </member>
+        <member name="T:MyHotel.Web.Controllers.RoomsController">
+            <summary>
+            Controller for the Rooms.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Web.Controllers.RoomsController"/> class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsController.GetRoomModel(System.Int32)">
+            <summary>
+            Private method to the the room model.
+            </summary>
+            <param name="id">id of the room.</param>
+            <returns>room as MyHotel.Web.Models.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsController.Index">
+            <summary>
+            Method to return the Index page.
+            </summary>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsController.Details(System.Int32)">
+            <summary>
+            Method to return the Details page.
+            </summary>
+            <param name="id">id of the room.</param>
+            <returns>Details page.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsController.Remove(System.Int32)">
+            <summary>
+            Method to return the Remove page.
+            </summary>
+            <param name="id">id of the room that you want to delete.</param>
+            <returns>the remove page.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsController.Edit(System.Int32)">
+            <summary>
+            Method to return the Edit Page.
+            </summary>
+            <param name="id">id of the room for editing.</param>
+            <returns>the Page for editig.</returns>
+        </member>
+        <member name="M:MyHotel.Web.Controllers.RoomsController.Edit(MyHotel.Web.Models.Rooms,System.String)">
+            <summary>
+            HttpPost method to post the edited room.
+            </summary>
+            <param name="room">room that will be edit.</param>
+            <param name="editAction">editAction.</param>
+            <returns>The edited table witht edited room.</returns>
+        </member>
+        <member name="T:MyHotel.Web.Models.ErrorViewModel">
+            <summary>
+            ErrorViewModel class.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.ErrorViewModel.RequestId">
+            <summary>
+            Gets or sets of the requestId.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.ErrorViewModel.ShowRequestId">
+            <summary>
+            Gets a value indicating whether show request Id.
+            </summary>
+        </member>
+        <member name="T:MyHotel.Web.Models.MapperFactory">
+            <summary>
+            Class for the Mapping.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Web.Models.MapperFactory.CreateMapper">
+            <summary>
+            Method to create mapper for instances.
+            </summary>
+            <returns>Imapper.</returns>
+        </member>
+        <member name="T:MyHotel.Web.Models.Rooms">
+            <summary>
+            Model class for the rooms.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.Rooms.Id">
+            <summary>
+            Gets or sets of Id.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.Rooms.RoomsType">
+            <summary>
+            Gets or sets of RoomsType.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.Rooms.RoomsAmount">
+            <summary>
+            Gets or sets of RoomsAmount.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.Rooms.RoomsAvailable">
+            <summary>
+            Gets or sets of RoomsAvailable.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.Rooms.RoomsPrice">
+            <summary>
+            Gets or sets of RoomsPrice.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.Rooms.RoomsView">
+            <summary>
+            Gets or sets of RoomsView.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.Rooms.Selection">
+            <summary>
+            Gets or sets of Selection.
+            </summary>
+        </member>
+        <member name="T:MyHotel.Web.Models.RoomsListViewModel">
+            <summary>
+            Class for the viewmodel of the rooms.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.RoomsListViewModel.EditedRoom">
+            <summary>
+            Gets or sets of the room for editing.
+            </summary>
+        </member>
+        <member name="P:MyHotel.Web.Models.RoomsListViewModel.ListOfRooms">
+            <summary>
+            Gets or sets of list of rooms.
+            </summary>
+        </member>
+        <member name="T:MyHotel.Web.Program">
+            <summary>
+            Main Program.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Web.Program.Main(System.String[])">
+            <summary>
+            Main Method.
+            </summary>
+            <param name="args">args parameter.</param>
+        </member>
+        <member name="M:MyHotel.Web.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Method that Create Host Builder.
+            </summary>
+            <param name="args">args parameter.</param>
+            <returns>IHostBuild.</returns>
+        </member>
+        <member name="T:MyHotel.Web.Startup">
+            <summary>
+            Startup class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Web.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Web.Startup"/> class.
+            </summary>
+            <param name="configuration">configuration parameter.</param>
+        </member>
+        <member name="P:MyHotel.Web.Startup.Configuration">
+            <summary>
+            Gets of Configuration.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">service parameter.</param>
+        </member>
+        <member name="M:MyHotel.Web.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">app parameter.</param>
+            <param name="env">env parameter.</param>
+        </member>
+    </members>
+</doc>

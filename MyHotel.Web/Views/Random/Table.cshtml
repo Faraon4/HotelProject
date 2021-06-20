@@ -1,0 +1,74 @@
+﻿@model IEnumerable<MyHotel.Web.Models.Rooms>
+
+@{
+    ViewBag.Title = "RoomList";
+}
+<h2>Room List</h2>
+
+@if (Model.Count() == 0)
+{
+    <p>
+        No data in the database !!!
+    </p>
+}
+else
+{
+
+    <br />
+    <p>SELECTED ITEMS</p>
+    <table border="1">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.First().RoomsType)</th>
+            <th>@Html.DisplayNameFor(m => m.First().RoomsAmount)</th>
+            <th>@Html.DisplayNameFor(m => m.First().RoomsAvailable)</th>
+            <th>@Html.DisplayNameFor(m => m.First().RoomsPrice)</th>
+            <th>@Html.DisplayNameFor(m => m.First().RoomsView)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Selection)</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+
+            if (item.Selection == "SELECTED")
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.RoomsType)</td>
+                    <td>@Html.DisplayFor(m => item.RoomsAmount)</td>
+                    <td>@Html.DisplayFor(m => item.RoomsAvailable)</td>
+                    <td>@Html.DisplayFor(m => item.RoomsPrice)</td>
+                    <td>@Html.DisplayFor(m => item.RoomsView)</td>
+                    <td>@Html.DisplayFor(m => item.Selection)</td>
+                </tr>
+            }
+        }
+    </table>
+
+
+    <br />
+
+    <p>UNSELECTED ITEMS</p>
+    <table border="1">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.First().RoomsType)</th>
+            <th>@Html.DisplayNameFor(m => m.First().RoomsAmount)</th>
+            <th>@Html.DisplayNameFor(m => m.First().RoomsAvailable)</th>
+            <th>@Html.DisplayNameFor(m => m.First().RoomsPrice)</th>
+            <th>@Html.DisplayNameFor(m => m.First().RoomsView)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Selection)</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+
+            if (item.Selection == "UNSELECTED")
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.RoomsType)</td>
+                    <td>@Html.DisplayFor(m => item.RoomsAmount)</td>
+                    <td>@Html.DisplayFor(m => item.RoomsAvailable)</td>
+                    <td>@Html.DisplayFor(m => item.RoomsPrice)</td>
+                    <td>@Html.DisplayFor(m => item.RoomsView)</td>
+                    <td>@Html.DisplayFor(m => item.Selection)</td>
+                </tr>
+            }
+        }
+    </table>
+}

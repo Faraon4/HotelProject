@@ -1,0 +1,26 @@
+﻿<Window x:Class="MyHotel.NewWPF.SecondWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyHotel.NewWPF"
+        xmlns:data ="clr-namespace:MyHotel.NewWPF"
+        mc:Ignorable="d"
+        Title="SecondWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="listTemplate" DataType="{x:Type data:RoomVM}">
+            <StackPanel Orientation="Horizontal" Background="Azure">
+                <Label Content="{Binding Path=Id}" HorizontalContentAlignment="Center"/>
+                <Label Content="{Binding Path=RoomsType}" HorizontalContentAlignment="Center"/>
+                <Label Content="{Binding Path=RoomsAmount}" HorizontalContentAlignment="Center"/>
+                <Label Content="{Binding Path=RoomsAvailable}" HorizontalContentAlignment="Center"/>
+                <Label Content="{Binding Path=RoomsPrice}" HorizontalContentAlignment="Center"/>
+                <Label Content="{Binding Path=RoomsView}" HorizontalContentAlignment="Center"/>
+                <Label Content="{Binding Path=Selection}" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <ListBox ItemsSource="{Binding Path=RandomRooms}" ItemTemplate="{StaticResource ResourceKey=listTemplate}" HorizontalAlignment="Left" Height="330" Margin="10,10,0,0" VerticalAlignment="Top" Width="847"/>
+    </Grid>
+</Window>

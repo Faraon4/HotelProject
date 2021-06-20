@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyHotel.NewWPF</name>
+    </assembly>
+    <members>
+        <member name="T:MyHotel.NewWPF.App">
+            <summary>
+            Interaction logic for App.xaml.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.App.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.NewWPF.App"/> class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:MyHotel.NewWPF.IMainLogic">
+            <summary>
+            interface for the main logic.
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.IMainLogic.UnselectLogic(System.Int32)">
+            <summary>
+            Method to make room unselected.
+            </summary>
+            <param name="id">id of the room.</param>
+        </member>
+        <member name="M:MyHotel.NewWPF.IMainLogic.SelectLogic(System.Int32)">
+            <summary>
+            Method to select room.
+            </summary>
+            <param name="id">id of the room.</param>
+        </member>
+        <member name="M:MyHotel.NewWPF.IMainLogic.GetOneRoom">
+            <summary>
+            Method to get one randomo room.
+            </summary>
+            <returns>RoomVM.</returns>
+        </member>
+        <member name="M:MyHotel.NewWPF.IMainLogic.DeleteRoom(System.Int32)">
+            <summary>
+            Method to delete the room.
+            </summary>
+            <param name="id">id of the room to delete.</param>
+        </member>
+        <member name="T:MyHotel.NewWPF.MainLogic">
+            <summary>
+            Clas for the main logic.
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainLogic.GetOneRoom">
+            <summary>
+            Implementing the method to get one random room.
+            </summary>
+            <returns>room vm.</returns>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainLogic.SelectLogic(System.Int32)">
+            <summary>
+            Method to call the Random/Select.
+            </summary>
+            <param name="id">id of the room.</param>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainLogic.UnselectLogic(System.Int32)">
+            <summary>
+            Method to call Random/Unselect.
+            </summary>
+            <param name="id">id of the room.</param>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainLogic.DeleteRoom(System.Int32)">
+            <summary>
+            Method to delete the added random room.
+            </summary>
+            <param name="id">id of the room to be deleted.</param>
+        </member>
+        <member name="T:MyHotel.NewWPF.MainVM">
+            <summary>
+            Main View Model.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.MainVM.Number">
+            <summary>
+            Gets or sets of Number.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.MainVM.RandomRooms">
+            <summary>
+            Gets or sets of randomRooms list.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.MainVM.SendCmd">
+            <summary>
+            Gets of the command to send the input number.
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainVM.#ctor(MyHotel.NewWPF.IMainLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.NewWPF.MainVM"/> class.
+            </summary>
+            <param name="logic">logic parameter.</param>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainVM.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.NewWPF.MainVM"/> class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainVM.Helper(System.Object,System.EventArgs)">
+            <summary>
+            Helper method to call the GetOne room.
+            </summary>
+            <param name="sender">sender.</param>
+            <param name="e">event.</param>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainVM.SelectVM(System.Int32)">
+            <summary>
+            Method to make a room selected.
+            </summary>
+            <param name="id">id of the room.</param>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainVM.UnselectVM(System.Int32)">
+            <summary>
+             Method to make a room unselected.
+            </summary>
+            <param name="id">id of the room.</param>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainVM.DeleteVM(System.Int32)">
+            <summary>
+            Method to delete the room.
+            </summary>
+            <param name="id">id of the room to be deleted.</param>
+        </member>
+        <member name="T:MyHotel.NewWPF.MainWindow">
+            <summary>
+            Main Window.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.NewWPF.MainWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MyHotel.NewWPF.MyIOC">
+            <summary>
+            MyIOC class.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.MyIOC.Instance">
+            <summary>
+            Gets MyIOC Instance.
+            </summary>
+        </member>
+        <member name="T:MyHotel.NewWPF.RoomVM">
+            <summary>
+            Class for the VM of room.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.RoomVM.Id">
+            <summary>
+            Gets or sets of id.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.RoomVM.RoomsType">
+            <summary>
+            Gets or sets of type.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.RoomVM.RoomsAmount">
+            <summary>
+            Gets or sets of amount.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.RoomVM.RoomsAvailable">
+            <summary>
+            Gets or sets of availability of room.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.RoomVM.RoomsPrice">
+            <summary>
+            Gets or sets of price of room.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.RoomVM.RoomsView">
+            <summary>
+            Gets or sets of view.
+            </summary>
+        </member>
+        <member name="P:MyHotel.NewWPF.RoomVM.Selection">
+            <summary>
+            Gets or sets of selection.
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.RoomVM.CopyFrom(MyHotel.NewWPF.RoomVM)">
+            <summary>
+            Method to copy from properties of room.
+            </summary>
+            <param name="other">other room vm.</param>
+        </member>
+        <member name="M:MyHotel.NewWPF.RoomVM.ToString">
+            <summary>
+            Overriding the To string method.
+            </summary>
+            <returns>string.</returns>
+        </member>
+        <member name="T:MyHotel.NewWPF.SecondWindow">
+            <summary>
+            Interaction logic for SecondWindow.xaml.
+            </summary>
+            <summary>
+            SecondWindow
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.SecondWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.NewWPF.SecondWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:MyHotel.NewWPF.SecondWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,9 @@
+﻿@model MyHotel.Web.Models.RoomsListViewModel
+
+@{
+    ViewBag.Title = "CRUD";
+}
+
+<h2>Rooms</h2>
+
+@await Html.PartialAsync("Table", Model.ListOfRooms)

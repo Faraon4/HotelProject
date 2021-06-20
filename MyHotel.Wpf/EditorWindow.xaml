@@ -1,0 +1,39 @@
+﻿<Window x:Class="MyHotel.Wpf.EditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyHotel.Wpf"
+        xmlns:vm="clr-namespace:MyHotel.Wpf.VM"
+        mc:Ignorable="d"
+        Title="EditorWindow" Height="331" Width="264">
+    <Window.Resources>
+        <vm:EditorViewModel x:Key="VM"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource VM}">
+        <Label Content="Id" HorizontalAlignment="Left" Margin="41,64,0,0" VerticalAlignment="Top" Height="27" Width="61"/>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="41,87,0,0" VerticalAlignment="Top" Height="27" Width="61"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="41,117,0,0" VerticalAlignment="Top" Height="27" Width="61"/>
+        <Label Content="Available" HorizontalAlignment="Left" Margin="41,147,0,0" VerticalAlignment="Top" Height="27" Width="61"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="41,177,0,0" VerticalAlignment="Top" Height="27" Width="61"/>
+        <Label Content="View" HorizontalAlignment="Left" Margin="41,214,0,0" VerticalAlignment="Top" Height="27" Width="61"/>
+
+        <TextBox Text="{Binding Path=Room.Id}" 
+            HorizontalAlignment="Left" Margin="106,70,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding Path=Room.Type}" 
+            HorizontalAlignment="Left" Margin="106,95,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding Path=Room.Amount}" 
+            HorizontalAlignment="Left" Margin="106,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding Path=Room.Available}"
+            HorizontalAlignment="Left" Margin="106,153,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding Path=Room.Price}" 
+            HorizontalAlignment="Left" Margin="106,183,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding Path=Room.View}"
+            HorizontalAlignment="Left" Margin="106,219,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+
+        <Button Content="OK" HorizontalAlignment="Left" Margin="49,255,0,0" VerticalAlignment="Top" Height="35" Width="69" Click="OK_Click"/>
+        <Button Content="CANCEL" HorizontalAlignment="Left" Margin="144,253,0,0" VerticalAlignment="Top" Height="35" Width="69" Click="Cancel_Click"/>
+
+    </Grid>
+</Window>

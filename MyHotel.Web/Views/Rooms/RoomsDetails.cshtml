@@ -1,0 +1,34 @@
+﻿@model MyHotel.Web.Models.Rooms
+@{
+    ViewData["Title"] = "RoomsDetails";
+}
+
+<h2>Datasheet of one Room</h2>
+@Html.ActionLink("Back to the list", "Index")
+
+<table border="1">
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Id)</td>
+        <td>@Html.DisplayFor(m => m.Id)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.RoomsType)</td>
+        <td>@Html.DisplayFor(m => m.RoomsType)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.RoomsAmount)</td>
+        <td>@Html.DisplayFor(m => m.RoomsAmount)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.RoomsAvailable)</td>
+        <td>@Html.DisplayFor(m => m.RoomsAvailable)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.RoomsPrice)</td>
+        <td>@Html.DisplayFor(m => m.RoomsPrice)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.RoomsView)</td>
+        <td>@Html.DisplayFor(m => m.RoomsView)</td>
+    </tr>
+</table>

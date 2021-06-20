@@ -1,0 +1,29 @@
+﻿@model MyHotel.Web.Models.Rooms
+
+<h2>RoomsEdit</h2>
+
+@using (Html.BeginForm("Edit", "Rooms"))
+{
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.Hidden("editAction", ViewData["editAction"].ToString());
+
+    <div class="editor-label">@Html.LabelFor(m => m.RoomsType)</div>
+    <div class="editor-field">@Html.EditorFor(m => m.RoomsType)</div>
+
+    <div class="editor-label">@Html.LabelFor(m => m.RoomsAmount)</div>
+    <div class="editor-field">@Html.EditorFor(m => m.RoomsAmount)</div>
+
+    <div class="editor-label">@Html.LabelFor(m => m.RoomsAvailable)</div>
+    <div class="editor-field">@Html.EditorFor(m => m.RoomsAvailable)</div>
+
+    <div class="editor-label">@Html.LabelFor(m => m.RoomsPrice)</div>
+    <div class="editor-field">@Html.EditorFor(m => m.RoomsPrice)</div>
+
+    <div class="editor-label">@Html.LabelFor(m => m.RoomsView)</div>
+    <div class="editor-field">@Html.EditorFor(m => m.RoomsView)</div>
+
+    <input type="submit" value="SEND" />
+}

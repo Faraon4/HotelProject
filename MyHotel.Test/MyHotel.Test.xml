@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyHotel.Test</name>
+    </assembly>
+    <members>
+        <member name="T:MyHotel.Test.CRUD_Test">
+            <summary>
+            Test class for testing CRUD operations.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Test.CRUD_Test.TestGetOnePeople">
+            <summary>
+            Testing to Get One people.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Test.CRUD_Test.TestGeExtraGetAll">
+            <summary>
+            Testing to get all extra activity.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Test.CRUD_Test.RoomPriceUpdate">
+            <summary>
+            Update the price of the room.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Test.CRUD_Test.TestPeopleAdd">
+            <summary>
+            Testing to add new people.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Test.CRUD_Test.TestDeleteRoom">
+            <summary>
+            Testing to delete a room.
+            </summary>
+        </member>
+        <member name="T:MyHotel.Test.NON_CRUD_Test">
+            <summary>
+            Class for testing NON-CRUD operations.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Test.NON_CRUD_Test.CreateLogicWithMocks">
+            <summary>
+            Creaing the logic with mocks.
+            </summary>
+            <returns>reception.</returns>
+        </member>
+        <member name="M:MyHotel.Test.NON_CRUD_Test.TestTotalPrice">
+            <summary>
+            Testing the non-crud operation of how many people pay for their holiday.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Test.NON_CRUD_Test.RoomNr">
+            <summary>
+            Testing the non-crud operation of how many room of each type are used.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Test.NON_CRUD_Test.PeopleExtra">
+            <summary>
+            Testing the non-crud operation of how many extra activity are picked by people.
+            </summary>
+        </member>
+    </members>
+</doc>

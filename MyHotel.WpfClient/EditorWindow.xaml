@@ -1,0 +1,30 @@
+﻿<Window x:Class="MyHotel.WpfClient.EditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyHotel.WpfClient"
+        mc:Ignorable="d"
+        Title="EditorWindow" Height="289" Width="313"
+        d:DataContext="{d:DesignInstance Type={x:Type local:RoomVM}}">
+    <Grid>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="17,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="17,74,0,0" VerticalAlignment="Top"/>
+        <Label Content="Available" HorizontalAlignment="Left" Margin="17,102,0,0" VerticalAlignment="Top"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="17,130,0,0" VerticalAlignment="Top"/>
+        <Label Content="View" HorizontalAlignment="Left" Margin="17,158,0,0" VerticalAlignment="Top"/>
+
+
+        <TextBox Text="{Binding Path=RoomsType}" HorizontalAlignment="Left" Height="23" Margin="97,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox Text="{Binding Path=RoomsAmount}" HorizontalAlignment="Left" Height="23" Margin="97,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox Text="{Binding Path=RoomsAvailable}" HorizontalAlignment="Left" Height="23" Margin="97,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox Text="{Binding Path=RoomsPrice}" HorizontalAlignment="Left" Height="23" Margin="97,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox Text="{Binding Path=RoomsView}" HorizontalAlignment="Left" Height="23" Margin="97,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+
+
+        <Button Content="Ok" Click="OkClick" HorizontalAlignment="Left" Margin="19,197,0,0" VerticalAlignment="Top" Height="34" Width="112"/>
+        <Button Content="Cancel" Click="CancelClick" HorizontalAlignment="Left" Margin="176,197,0,0" VerticalAlignment="Top" Height="34" Width="112"/>
+
+
+    </Grid>
+</Window>

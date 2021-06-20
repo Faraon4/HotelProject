@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyHotel.AppUI</name>
+    </assembly>
+    <members>
+        <member name="T:MyHotel.AppUI.ExtensionsClass">
+            <summary>
+            Extension Class for Having the ToConsole method.
+            </summary>
+        </member>
+        <member name="M:MyHotel.AppUI.ExtensionsClass.ToConsole``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            The ToConsole Method.
+            </summary>
+            <typeparam name="T">Generic type of the method.</typeparam>
+            <param name="input">input param.</param>
+            <param name="str">str param.</param>
+        </member>
+        <member name="T:MyHotel.AppUI.Program">
+            <summary>
+            Main Program.
+            </summary>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.PriceUsingLogic(MyHotel.Logic.Reception)">
+            <summary>
+            Id, Room Type and the price of each room.
+            </summary>
+            <param name="reception">logic Parameter to coonect to the reception class and to call method GetRoomPrice().</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.PriceExtraLogic(MyHotel.Logic.Reception)">
+            <summary>
+            Print the Id , Extra Activity and the Price.
+            </summary>
+            <param name="reception">reception parameter to connect to the reception class and to call method GetExtraPrice().</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.PeopleCountryLogic(MyHotel.Logic.Reception)">
+            <summary>
+            Print the information about the people.
+            </summary>
+            <param name="reception">reception parameter to connect to the reception class and to call method PeopleCountryLogic().</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.AddNewRoom(MyHotel.Logic.Managers)">
+            <summary>
+            Adding new room.
+            </summary>
+            <param name="management">parameter to connect to manager and to add new room.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.AddnewExtra(MyHotel.Logic.Managers)">
+            <summary>
+            Add New Extra Activity.
+            </summary>
+            <param name="management">parameter to connect to manager and to add new extra.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.AddNewPeople(MyHotel.Logic.Managers)">
+            <summary>
+            Method to add new people.
+            </summary>
+            <param name="management">parameter to connect to manager and to add new people.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.ChangeRoomPrice(MyHotel.Logic.Managers)">
+            <summary>
+            Method to Change the Price of the Room.
+            </summary>
+            <param name="management">parameter to connect to manager and to change the price of the room.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.ChangeRoomPeople(MyHotel.Logic.Managers)">
+            <summary>
+            Method to Change the room of the people.
+            </summary>
+            <param name="management">parameter to connect to manager and to change the room of people.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.ChangeExtraPeople(MyHotel.Logic.Managers)">
+            <summary>
+            Method to Change the extra activity of the people.
+            </summary>
+            <param name="management">parameter to connect to manager and to change extra activity of the people.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.ChangeExtraPrice(MyHotel.Logic.Managers)">
+            <summary>
+            Method to change the price of extra activity.
+            </summary>
+            <param name="management">parameter to connect to manager and to change the price of the extra activity.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.RemoveRoom(MyHotel.Logic.Managers,System.Int32)">
+            <summary>
+            Method for removing the room.
+            </summary>
+            <param name="management">parameter to connect to manager and to delete the room.</param>
+            <param name="n">id of the room that want to delete.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.DeleteRoom(MyHotel.Logic.Managers,MyHotel.Logic.Reception)">
+            <summary>
+            Method that will delete rooms, by asking the ID of the room that want to delete, to check if this room exists, and then to change the room of people that have this room.
+            </summary>
+            <param name="management">management paramter to connect to manager and to be able to delete.</param>
+            <param name="reception">reception parameter to connect to reception and to read information.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.RemoveExtra(MyHotel.Logic.Managers,System.Int32)">
+            <summary>
+            Remove Extra.
+            </summary>
+            <param name="management">parameter to connect to manager and to delete the extra activity.</param>
+            <param name="n">id of the extra.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.DeleteExtra(MyHotel.Logic.Managers,MyHotel.Logic.Reception)">
+            <summary>
+            Method that will delete rooms, by asking the ID of the extra that want to delete, to check if this extra exists, and then to change the extra activity of people that have this extra.
+            </summary>
+            <param name="management">management paramter to connect to manager and to be able to delete.</param>
+            <param name="reception">reception parameter to connect to reception and to read information.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.RemovePeople(MyHotel.Logic.Managers)">
+            <summary>
+            Remove a people.
+            </summary>
+            <param name="management">management paramter to connect to manager and to be able to delete.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.NumberOfExtra(MyHotel.Logic.Reception)">
+            <summary>
+            Method that implements the non-crud operation of counting the number of extra activity.
+            </summary>
+            <param name="extra">extra parameter, to connect to Reception and to call the method that will do our goal.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.TotalPrice(MyHotel.Logic.Reception)">
+            <summary>
+            Method that implements the non-crud operation of calculating the total price that each people pay for their holiday.
+            </summary>
+            <param name="people">people parameter,to connect to Reception and to call the method that will do our goal.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.NumberOfRooms(MyHotel.Logic.Reception)">
+            <summary>
+            Method that implements the non-crud operation that will count how many rooms of each kind are used.
+            </summary>
+            <param name="rooms">rooms parameter,to connect to Reception and to call the method that will do our goal.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.TotalPriceTask(MyHotel.Logic.Reception)">
+            <summary>
+            Task to count how many people pay for their holiday.
+            </summary>
+            <param name="reception">reception parameter,to connect to Reception and to call the method that will do our goal, by calling the necessary method.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.RoomNumbTask(MyHotel.Logic.Reception)">
+            <summary>
+            Task to count how many rooms of each type are used.
+            </summary>
+            <param name="reception">reception parameter to connect to Reception and to call the method that will do our goal, by calling the necessary method.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.ExtraNumbTask(MyHotel.Logic.Reception)">
+            <summary>
+            Task to count how many extra of each type are used.
+            </summary>
+            <param name="reception">reception parameter to connect to Reception and to call the method that will do our goal, by calling the necessary method.</param>
+        </member>
+        <member name="M:MyHotel.AppUI.Program.Main">
+            <summary>
+            The main method.
+            </summary>
+        </member>
+    </members>
+</doc>

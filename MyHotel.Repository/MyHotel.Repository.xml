@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyHotel.Repository</name>
+    </assembly>
+    <members>
+        <member name="T:MyHotel.Repository.ExtraRepException">
+            <summary>
+            Custom Exeption to throw when you cannot find an extra activity by id.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.ExtraRepException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Repository.ExtraRepException"/> class.
+            Constructor without parameters.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.ExtraRepException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Repository.ExtraRepException"/> class.
+            Constructor that take parameter as argument message (string).
+            </summary>
+            <param name="message">message parameter , that will display when this exception occurs.</param>
+        </member>
+        <member name="T:MyHotel.Repository.ExtraRepository">
+            <summary>
+            Repository class for extra activity.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.ExtraRepository.#ctor(MyHotel.Models.HotelDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Repository.ExtraRepository"/> class.
+            </summary>
+            <param name="ctx">ctx parameter that will connect to our Db.</param>
+        </member>
+        <member name="M:MyHotel.Repository.ExtraRepository.AddNewExtra(MyHotel.Models.Extra)">
+            <summary>
+            Implementing the AddNewExtra method from IExtraRepository , that will add a new extra activity.
+            </summary>
+            <param name="newExtra">new extra aactivity as a parameter.</param>
+        </member>
+        <member name="M:MyHotel.Repository.ExtraRepository.ChangePriceExtra(System.Int32,System.Int32)">
+            <summary>
+            Implementing the method ChangePriceExtra() from the IExtraRepository Interface, that will change the price of extra activity.
+            </summary>
+            <param name="id">id of extra.</param>
+            <param name="newPrice">new price for the extra.</param>
+        </member>
+        <member name="M:MyHotel.Repository.ExtraRepository.DeleteExtraRepository(System.Int32)">
+            <summary>
+            Implementing the DeleteExtra Method from IExtraRepository, that is deleting extra activity.
+            </summary>
+            <param name="extraId">id of the extra that want to delete.</param>
+        </member>
+        <member name="M:MyHotel.Repository.ExtraRepository.GetOne(System.Int32)">
+            <summary>
+            Implementing the abstract method.
+            </summary>
+            <param name="id">id parameter.</param>
+            <returns>return an Extra activity by the id parameter input.</returns>
+        </member>
+        <member name="T:MyHotel.Repository.IExtraRepository">
+            <summary>
+            Repository interface for extra activity model.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.IExtraRepository.ChangePriceExtra(System.Int32,System.Int32)">
+            <summary>
+            Method for changing the price of extra.
+            </summary>
+            <param name="id">id of the extra.</param>
+            <param name="newPrice">new price for the activity.</param>
+        </member>
+        <member name="M:MyHotel.Repository.IExtraRepository.AddNewExtra(MyHotel.Models.Extra)">
+            <summary>
+            Method to add new extra activity.
+            </summary>
+            <param name="newExtra">new extra activity as a parameter.</param>
+        </member>
+        <member name="M:MyHotel.Repository.IExtraRepository.DeleteExtraRepository(System.Int32)">
+            <summary>
+            Method to delete extra activity.
+            </summary>
+            <param name="extraId">id of extra activity.</param>
+        </member>
+        <member name="T:MyHotel.Repository.IPeopleRepository">
+            <summary>
+            Repository interface for people Model.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.IPeopleRepository.AddNewPeople(MyHotel.Models.People)">
+            <summary>
+            Method to add new person.
+            </summary>
+            <param name="people">people to add.</param>
+        </member>
+        <member name="M:MyHotel.Repository.IPeopleRepository.DeletePeople(System.Int32)">
+            <summary>
+            Method to Delete people.
+            </summary>
+            <param name="peopleID">id of the people that want to delete.</param>
+        </member>
+        <member name="M:MyHotel.Repository.IPeopleRepository.ChangePeopleRoom(System.Int32,System.Int32)">
+            <summary>
+            Method to change the room of a people.
+            </summary>
+            <param name="peopleId">id of the people that want to change the room.</param>
+            <param name="newRoomId">id of the new room.</param>
+        </member>
+        <member name="M:MyHotel.Repository.IPeopleRepository.ChangePeopleExtra(System.Int32,System.Int32)">
+            <summary>
+            Method to change the extra activity for people.
+            </summary>
+            <param name="peopleId">id of the people.</param>
+            <param name="newExtraId">id of the new extra activity.</param>
+        </member>
+        <member name="T:MyHotel.Repository.IRepository`1">
+            <summary>
+            IRepository of Generic Type, where are methods that will help us to find all models and by one models.
+            </summary>
+            <typeparam name="T"> It is a generic type interface.</typeparam>
+        </member>
+        <member name="M:MyHotel.Repository.IRepository`1.GetOne(System.Int32)">
+            <summary>
+            Method to get one of something.
+            </summary>
+            <param name="id">id parameter will be used for finding the object.</param>
+            <returns>It should return of type that we are searching.</returns>
+        </member>
+        <member name="M:MyHotel.Repository.IRepository`1.GetAll">
+            <summary>
+            Method to get all of something (rooms, extra, people).
+            </summary>
+            <returns>Should return in a query.</returns>
+        </member>
+        <member name="T:MyHotel.Repository.IRoomRepository">
+            <summary>
+            Interface Repository for the Room.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.IRoomRepository.ChangePrice(System.Int32,System.Int32)">
+            <summary>
+            Method for Changing the Price of the Room.
+            </summary>
+            <param name="id">id  for finding the room.</param>
+            <param name="newprice">newprice for the room.</param>
+        </member>
+        <member name="M:MyHotel.Repository.IRoomRepository.ChangeAvailableRoom(System.Int32)">
+            <summary>
+            Method to change the available number of rooms.
+            </summary>
+            <param name="id">id of the room.</param>
+        </member>
+        <member name="M:MyHotel.Repository.IRoomRepository.AddNewEntity(MyHotel.Models.Rooms)">
+            <summary>
+            Method for adding new room.
+            </summary>
+            <param name="newRoom">newRoom parameter.</param>
+        </member>
+        <member name="M:MyHotel.Repository.IRoomRepository.DeleteRoom(System.Int32)">
+            <summary>
+            Method for deleting the Room.
+            </summary>
+            <param name="roomId">id of room that should be deleted.</param>
+        </member>
+        <member name="M:MyHotel.Repository.IRoomRepository.ChangeSelection(System.Int32,System.String)">
+            <summary>
+            Method to change the rooms selection.
+            </summary>
+            <param name="id">id if the room.</param>
+            <param name="text">text that you want to change.</param>
+            <returns>true or false.</returns>
+        </member>
+        <member name="T:MyHotel.Repository.PeopleRepException">
+            <summary>
+            Excception to throw if it is imposible to find people.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.PeopleRepException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Repository.PeopleRepException"/> class.
+            </summary>
+            <param name="message">message to be displayed.</param>
+        </member>
+        <member name="T:MyHotel.Repository.PeopleRepository">
+            <summary>
+            People Repository.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.PeopleRepository.#ctor(MyHotel.Models.HotelDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Repository.PeopleRepository"/> class.
+            </summary>
+            Constructor.
+            <param name="ctx">ctx parameter as a HotelDbContext.</param>
+        </member>
+        <member name="M:MyHotel.Repository.PeopleRepository.AddNewPeople(MyHotel.Models.People)">
+            <summary>
+            Implementing the AddNewPeople from IPoepleRepository interface, that add new people..
+            </summary>
+            <param name="people">people parameter.</param>
+        </member>
+        <member name="M:MyHotel.Repository.PeopleRepository.ChangePeopleRoom(System.Int32,System.Int32)">
+            <summary>
+            Implementing the Change People Room method from IPeopleRepository interface, that changes the room for the people.
+            </summary>
+            <param name="peopleId">id of the people.</param>
+            <param name="newRoomId">id of the room.</param>
+        </member>
+        <member name="M:MyHotel.Repository.PeopleRepository.ChangePeopleExtra(System.Int32,System.Int32)">
+            <summary>
+            Implementing the ChangePeopleExtra() method from the IPeopleRepository interface, that changed the extra activity of the people.
+            </summary>
+            <param name="peopleId">id of the people.</param>
+            <param name="newExtraId">id of the extra activity.</param>
+        </member>
+        <member name="M:MyHotel.Repository.PeopleRepository.DeletePeople(System.Int32)">
+            <summary>
+            Implementing the DeletePeople From IPeopleRepository, that delete people.
+            </summary>
+            <param name="peopleID">id of the people.</param>
+        </member>
+        <member name="M:MyHotel.Repository.PeopleRepository.GetOne(System.Int32)">
+            <summary>
+            Get one object of type People.
+            </summary>
+            <param name="id">id parameter.</param>
+            <returns>people with the current id.</returns>
+        </member>
+        <member name="T:MyHotel.Repository.RepositoryClass`1">
+            <summary>
+            Abstract Repository Class.
+            </summary>
+            <typeparam name="T">This class is generic.</typeparam>
+        </member>
+        <member name="F:MyHotel.Repository.RepositoryClass`1.ctx">
+            <summary>
+            Making the connection to the HotelDbContext.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.RepositoryClass`1.#ctor(MyHotel.Models.HotelDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Repository.RepositoryClass`1"/> class.
+            </summary>
+            <param name="ctx">ctx parameter.</param>
+        </member>
+        <member name="M:MyHotel.Repository.RepositoryClass`1.GetAll">
+            <summary>
+            Method to get all of something (rooms, people, extra).
+            </summary>
+            <returns>a query of entities.</returns>
+        </member>
+        <member name="M:MyHotel.Repository.RepositoryClass`1.GetOne(System.Int32)">
+            <summary>
+            Making GetOne method from IRepository to abstract.
+            </summary>
+            <param name="id">id parameter.</param>
+            <returns>type that we need.</returns>
+        </member>
+        <member name="T:MyHotel.Repository.RoomRepException">
+            <summary>
+            Custom Exeption to be thrown when there is no such room by id.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.RoomRepException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Repository.RoomRepException"/> class
+            Constructor without parameters.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.RoomRepException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Repository.RoomRepException"/> class
+            Constructor with parameter.
+            </summary>
+            <param name="mes">message to display.</param>
+        </member>
+        <member name="T:MyHotel.Repository.RoomRepository">
+            <summary>
+            Repository for the Room.
+            </summary>
+        </member>
+        <member name="M:MyHotel.Repository.RoomRepository.#ctor(MyHotel.Models.HotelDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyHotel.Repository.RoomRepository"/> class.
+            </summary>
+            <param name="ctx">ctx parameter.</param>
+        </member>
+        <member name="M:MyHotel.Repository.RoomRepository.AddNewEntity(MyHotel.Models.Rooms)">
+            <summary>
+            Implementing the method from IRoomRepository, that add a new room.
+            </summary>
+            <param name="newRoom">newRoom parameter.</param>
+        </member>
+        <member name="M:MyHotel.Repository.RoomRepository.ChangePrice(System.Int32,System.Int32)">
+            <summary>
+            Implemention the method  ChangingPrice() from IRoomRepository, that change the price of the room.
+            </summary>
+            <param name="id">id of the room.</param>
+            <param name="newprice">newprice for the room.</param>
+        </member>
+        <member name="M:MyHotel.Repository.RoomRepository.ChangeAvailableRoom(System.Int32)">
+            <summary>
+            Implementing the method from IRoomRepository, that change how many rooms are available.
+            </summary>
+            <param name="id">id of the room.</param>
+        </member>
+        <member name="M:MyHotel.Repository.RoomRepository.DeleteRoom(System.Int32)">
+            <summary>
+            Implementing the DeleteRoom method from the Interface, that delete room.
+            </summary>
+            <param name="roomId">id of the room.</param>
+        </member>
+        <member name="M:MyHotel.Repository.RoomRepository.GetOne(System.Int32)">
+            <summary>
+            Get one room by the id.
+            </summary>
+            <param name="id">id that will be used.</param>
+            <returns>room with all information about this.</returns>
+        </member>
+        <member name="M:MyHotel.Repository.RoomRepository.ChangeSelection(System.Int32,System.String)">
+            <summary>
+            Implementing the method to change the selection of the room.
+            </summary>
+            <param name="id">id of the room.</param>
+            <param name="text">text that you want to change.</param>
+            <returns>true or false.</returns>
+        </member>
+    </members>
+</doc>
